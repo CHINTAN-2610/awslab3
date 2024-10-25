@@ -10,7 +10,7 @@ phases:
     commands:
       - echo Building the Docker image...
       - docker build -t chintanecspipeline .
-      - docker tag chintanecspipeline:latest 864899837235.dkr.ecr.ap-south-1.amazonaws.com/chintan/myrepo:1
+      - docker tag chintanecspipeline:1 864899837235.dkr.ecr.ap-south-1.amazonaws.com/chintan/myrepo:1
 
   post_build:
     commands:
