@@ -9,15 +9,15 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t chintanecspipeline:2 .
-      - docker tag chintanecspipeline:2 864899837235.dkr.ecr.ap-south-1.amazonaws.com/chintan/myrepo:2
+      - docker build -t chintanecspipeline:3 .
+      - docker tag chintanecspipeline:3 864899837235.dkr.ecr.ap-south-1.amazonaws.com/chintan/myrepo:3
 
   post_build:
     commands:
       - echo Pushing the Docker image to ECR...
-      - docker push 864899837235.dkr.ecr.ap-south-1.amazonaws.com/chintan/myrepo:2
+      - docker push 864899837235.dkr.ecr.ap-south-1.amazonaws.com/chintan/myrepo:3
       - echo Writing image definitions file...
-      - printf '[{"name":"chintanecscontainer","imageUri":"%s"}]' 864899837235.dkr.ecr.ap-south-1.amazonaws.com/chintan/myrepo:2 > imagedefinitions.json
+      - printf '[{"name":"chintanecscontainer","imageUri":"%s"}]' 864899837235.dkr.ecr.ap-south-1.amazonaws.com/chintan/myrepo:3 > imagedefinitions.json
 
 artifacts:
   files: imagedefinitions.json
