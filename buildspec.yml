@@ -15,7 +15,7 @@ phases:
   post_build:
     commands:
       - echo Pushing the Docker image to ECR...
-      - docker push 864899837235.dkr.ecr.ap-south-1.amazonaws.com/chintan/myrepo:1
+      - docker push 864899837235.dkr.ecr.ap-south-1.amazonaws.com/chintan/myrepo:2
       - echo Writing image definitions file...
       - printf '[{"name":"chintanecscontainer","imageUri":"%s"}]' 864899837235.dkr.ecr.ap-south-1.amazonaws.com/chintan/myrepo:2 > imagedefinitions.json
 
